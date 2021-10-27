@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div id="bloque2">
+        <h2 class = "h2">ESTACIONAMIENTO</h2>
+        <div>
+            <label>SALIDA</label>
+        </div>
+        <div><label>Tarifa</label></div>
+        <div><label>1 a 3hrs = 100$</label></div>
+        <div><label>4 a 5hrs = 200$</label></div>
+        <div><label>6 a mas hrs = 500$</label></div>
+        <div>
+            <label>Horas dentro del estacionamiento: </label>
+            <input type ="number" class ="form-control" id ="Horas" min="1" value="1">
+        </div>
+        <button onclick="calcularMonto()">Calcular</button>
+
+        <div>
+            <label>Monto a pagar: </label>
+            <input type ="text" class ="form-control" id ="Monto" placeholder ="Monto a pagar">
+        </div>
+        <div>
+            <label>Pago: </label>
+            <input type ="text" class ="form-control" id ="Pago" placeholder ="Ingresa pago">
+        </div>
+        <div>
+            <label>Cambio: </label>
+            <input type ="text" class ="form-control" id ="Cambio">
+        </div>
+    </div>
+</body>
+
+<script src="condicionador.js"></script>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div>
+        <div id="bloque1">
+            <h2 class = "h2">ESTACIONAMIENTO</h2>
+            <div>
+                <label>REGISTRO</label>
+            </div>
+            <div>
+                <label>Matricula del auto: </label>
+                <input type ="text" class ="form-control" id ="matricula" placeholder ="Ingresa la Matricula del auto">
+            </div>
+            <div>
+                <label>Marca del auto: </label>
+                <input type ="text" class ="form-control" id ="marca" placeholder= "Ingresa la Marca del auto">
+            </div>
+            <button type ="button" class ="btn btn-primary" type="reset" onclick="capturar();">Registrar</button>
+        </div>
+    </div>
+    <div class="container">
+        <table class="tabla" id="tabla">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>Matricula</th>
+                    <th>Marca</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <script>
+        function capturar(){
+            //console.log("capturado");
+            function coche(matricula, marca){
+                this.matricula=matricula;
+                this.marca=marca;
+            }
+            var nombreCapturar = document.getElementById("matricula").value;
+            //console.log(nombreCapturar);
+            var marcaCapturar = document.getElementById("marca").value;
+            //console.log(marcaCapturar);
+
+            nuevoCoche = new coche(nombreCapturar, marcaCapturar);
+            console.log(nuevoCoche);
+            AGREGAR();
+        }
+
+        var baseDatos= [];
+        function AGREGAR(){
+            baseDatos.push(nuevoCoche);
+            console.log(baseDatos);
+            document.getElementById("tabla").innerHTML += '<tbody><td>'+nuevoCoche.matricula+'</td><td>'+nuevoCoche.marca+'</td></tbody>';
+        };
+    </script>
+</body>
+</html>
